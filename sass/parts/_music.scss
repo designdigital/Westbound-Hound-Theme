@@ -7,6 +7,11 @@
       margin-bottom: 1.5rem;
       a {
         color: $color-lightest;
+        &:hover {
+          img {
+            border: 3px solid $color-alt;
+          }
+        }
         img {
           @include box-sizing;
           display: block;
@@ -15,7 +20,7 @@
           height: auto;
           padding: 2rem;
           background: $color-highlight;
-          border: 6px solid $color-alt;
+          border: 3px solid $color-accent;
         }
       }
     }

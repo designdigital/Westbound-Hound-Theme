@@ -1069,6 +1069,8 @@ form {
     margin-bottom: 1.5rem; }
     .listening-to ul li a {
       color: #f9f2e0; }
+      .listening-to ul li a:hover img {
+        border: 3px solid #e9c057; }
       .listening-to ul li a img {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -1079,7 +1081,7 @@ form {
         height: auto;
         padding: 2rem;
         background: #5eaa94;
-        border: 6px solid #e9c057; }
+        border: 3px solid #e16a48; }
 
 .main-footer {
   background: #31282c;
