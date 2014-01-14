@@ -177,9 +177,9 @@ Tags:       roadtrip
  * Gutterless grids have all the properties of regular grids, minus any spacing.
  * Extends `.grid`.
  */
-.main-header, .map-container, .main-content, .main-footer {
+.main-header, .map-container, .main-footer {
   margin-left: 0; }
-  .main-content .main-header > .post, .main-content .map-container > .post, .main-content > .post, .main-content .main-footer > .post, .listening-to .main-header > li, .listening-to .map-container > li, .listening-to .main-content > li, .listening-to .main-footer > li {
+  .main-content .main-header > .post, .main-content .map-container > .post, .main-content .main-footer > .post, .listening-to .main-header > li, .listening-to .map-container > li, .listening-to .main-footer > li {
     padding-left: 0; }
 
 /**
