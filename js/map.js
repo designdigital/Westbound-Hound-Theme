@@ -8,7 +8,7 @@ function initialize() {
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
   var kmlLayer = new google.maps.KmlLayer({
-    url: 'https://feeds.foursquare.com/history/A1YTYJCWSJTB5K3IBVQBEXLK5GXTQ1EQ.kml',
+    url: 'https://feeds.foursquare.com/history/3U1KLCUOEHE1MBBQ0Y2IRMWEZYAXDZ1A.kml',
     suppressInfoWindows: true,
     map: map
   });
