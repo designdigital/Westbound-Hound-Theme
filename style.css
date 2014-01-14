@@ -993,8 +993,7 @@ form {
 
 .map-container {
   background: #5eaa94;
-  padding: 2rem;
-  margin-bottom: 2rem; }
+  padding: 2rem; }
   .map-container .google-map {
     padding-bottom: 2rem; }
     .map-container .google-map #map-canvas {
@@ -1019,12 +1018,13 @@ form {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   background: #5eaa94;
-  padding: 2rem; }
+  padding: 2rem;
+  border: 3px solid #e16a48; }
   .latest-posts .post .post-info {
-    position: absolute;
     bottom: 5rem;
     text-align: left;
     background: #e9c057;
+    margin: 0 0 2rem -1rem;
     padding: 0.5rem 1rem;
     line-height: 1; }
     .latest-posts .post .post-info h2 {
@@ -1044,7 +1044,7 @@ form {
       -moz-box-sizing: border-box;
       box-sizing: border-box;
       border-radius: 100%;
-      width: 6rem;
+      width: 6.5rem;
       height: auto;
       border: 3px solid #e9c057; }
   .latest-posts .post p {

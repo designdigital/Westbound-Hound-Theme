@@ -19,7 +19,7 @@
     <?php if ( have_posts() ): ?>
 
     <section class="latest-posts">
-      <h2>Our Photos</h2>
+      <h2>How We're Doing</h2>
       <?php while ( have_posts() ) : the_post(); ?>
         <article class="post">
           <div class="post-info">

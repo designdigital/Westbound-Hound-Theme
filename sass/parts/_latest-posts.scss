@@ -4,11 +4,12 @@
     @include box-sizing;
     background: $color-highlight;
     padding: 2rem;
+    border: 3px solid $color-accent;
     .post-info {
-      position: absolute;
       bottom: 5rem;
       text-align: left;
       background: $color-alt;
+      margin: 0 0 2rem -1rem;
       padding: 0.5rem 1rem;
       line-height: 1;
       h2 {
@@ -30,7 +31,7 @@
       img {
         @include box-sizing;
         border-radius: 100%;
-        width: 6rem;
+        width: 6.5rem;
         height: auto;
         border: 3px solid $color-alt;
       }
