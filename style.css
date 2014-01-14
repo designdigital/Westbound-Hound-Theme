@@ -1051,7 +1051,7 @@ form {
   .latest-posts .post p {
     margin-bottom: 0; }
     .latest-posts .post p a {
-      border: none; }
+      color: #31282c; }
       .latest-posts .post p a img {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
