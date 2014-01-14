@@ -37,5 +37,7 @@
 
     <?php endif; ?>
 
+    <?php Starkers_Utilities::get_template_parts( array( 'parts/music' ) ); ?>
+
   </div><!-- end of .main-content -->
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer') ); ?>

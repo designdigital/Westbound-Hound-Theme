@@ -136,7 +136,7 @@ Tags:       roadtrip
  * 2. Remove any margins and paddings that might affect the grid system.
  * 3. Apply a negative `margin-left` to negate the columns’ gutters.
  */
-.main-header, .map-container, .main-content, .main-footer {
+.main-header, .map-container, .main-content, .main-footer, .listening-to {
   list-style: none;
   /* [1] */
   margin: 0;
@@ -153,7 +153,7 @@ Tags:       roadtrip
  * 4. Full-width unless told to behave otherwise.
  * 5. Required to combine fluid widths and fixed gutters.
  */
-.main-content .post {
+.main-content .post, .listening-to li {
   display: inline-block;
   /* [1] */
   padding-left: 1.6rem;
@@ -179,7 +179,7 @@ Tags:       roadtrip
  */
 .main-header, .map-container, .main-content, .main-footer {
   margin-left: 0; }
-  .main-content .main-header > .post, .main-content .map-container > .post, .main-content > .post, .main-content .main-footer > .post {
+  .main-content .main-header > .post, .main-content .map-container > .post, .main-content > .post, .main-content .main-footer > .post, .listening-to .main-header > li, .listening-to .map-container > li, .listening-to .main-content > li, .listening-to .main-footer > li {
     padding-left: 0; }
 
 /**
@@ -191,7 +191,7 @@ Tags:       roadtrip
  */
 .main-content {
   text-align: center; }
-  .main-content > .post {
+  .main-content > .post, .listening-to .main-content > li {
     text-align: left; }
 
 /**
@@ -278,7 +278,7 @@ Tags:       roadtrip
   /**
    * Halves
    */
-  .main-content .post {
+  .main-content .post, .listening-to li {
     width: 50%; }
 
   /**
@@ -349,6 +349,9 @@ Tags:       roadtrip
   /**
    * Fifths
    */
+  .listening-to li {
+    width: 20%; }
+
   /**
    * Sixths
    */
@@ -1055,6 +1058,28 @@ form {
         width: 100%;
         height: auto;
         display: block; }
+
+.listening-to ul {
+  list-style-type: none;
+  padding: 0; }
+  .listening-to ul li {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1.5rem; }
+    .listening-to ul li a {
+      color: #f9f2e0; }
+      .listening-to ul li a img {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        padding: 2rem;
+        background: #5eaa94;
+        border: 6px solid #e9c057; }
 
 .main-footer {
   background: #31282c;

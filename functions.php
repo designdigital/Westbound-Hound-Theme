@@ -73,6 +73,9 @@
 		wp_register_script( 'map', get_template_directory_uri().'/js/map.js', array( 'jquery' ) );
 		wp_enqueue_script( 'map' );
 
+		wp_register_script( 'lastfm', get_template_directory_uri().'/js/lastfm.js', array( 'jquery' ) );
+		wp_enqueue_script( 'lastfm' );
+
 		wp_register_script( 'main', get_template_directory_uri().'/js/main.js', array( 'jquery' ) );
 		wp_enqueue_script( 'main' );
 
