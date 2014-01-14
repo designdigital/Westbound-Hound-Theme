@@ -1,5 +1,6 @@
 .latest-posts {
   .post {
+    position: relative;
     text-align: left;
     @include box-sizing;
     background: $color-highlight;

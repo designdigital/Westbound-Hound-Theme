@@ -1013,6 +1013,7 @@ form {
     padding: 1rem 1rem 1.5rem 1rem; }
 
 .latest-posts .post {
+  position: relative;
   text-align: left;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
