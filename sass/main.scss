@@ -1,0 +1,39 @@
+/*
+Theme Name:   Roadtrip
+Theme URI:    http://jillmolloy.com
+Description:  Custom Roadtrip Wordpress theme.
+Version:    090114
+Author:     Jill Molloy
+Author URI:   http://jillmolloy.com
+Tags:       roadtrip
+*/
+
+@import "includes/_grid";
+@import "includes/_layout";
+@import "includes/_normalize";
+@import "includes/_variables-mixins";
+@import "includes/_setup";
+@import "parts/_header";
+@import "parts/_latest-posts";
+@import "parts/_footer";
+
+html {
+  font-family: $font-sans;
+  font-size: 62.5%;
+}
+body {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $color-main;
+  background: $color-lightest;
+}
+header {
+  @include box-sizing;
+  padding: 1.5rem 2rem 0.1rem 2rem;
+  background: $color-main;
+  color: $color-lightest;
+}
+section {
+  @include box-sizing;
+  padding: 2rem;
+}

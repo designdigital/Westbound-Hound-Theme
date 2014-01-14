@@ -1,0 +1,1087 @@
+@charset "UTF-8";
+/*
+Theme Name:   Roadtrip
+Theme URI:    http://jillmolloy.com
+Description:  Custom Roadtrip Wordpress theme.
+Version:    090114
+Author:     Jill Molloy
+Author URI:   http://jillmolloy.com
+Tags:       roadtrip
+*/
+/*------------------------------------*\
+    $CSSWIZARDRY-GRIDS
+\*------------------------------------*/
+/**
+ * CONTENTS
+ * INTRODUCTION.........How the grid system works.
+ * VARIABLES............Your settings.
+ * MIXINS...............Library mixins.
+ * GRID SETUP...........Build the grid structure.
+ * WIDTHS...............Build our responsive widths around our breakpoints.
+ * PUSH.................Push classes.
+ * PULL.................Pull classes.
+ */
+/*------------------------------------*\
+    $INTRODUCTION
+\*------------------------------------*/
+/**
+ * csswizardry grids provides you with widths to suit a number of breakpoints
+ * designed around devices of a size you specify. Out of the box, csswizardry
+ * grids caters to the following types of device:
+ *
+ * palm     --  palm-based devices, like phones and small tablets
+ * lap      --  lap-based devices, like iPads or laptops
+ * portable --  all of the above
+ * desk     --  stationary devices, like desktop computers
+ * regular  --  any/all types of device
+ *
+ * These namespaces are then used in the library to give you the ability to
+ * manipulate your layouts based around them, for example:
+ *
+   <div class="grid__item  one-whole  lap--one-half  desk--one-third">
+ *
+ * This would give you a grid item which is 100% width unless it is on a lap
+ * device, at which point it become 50% wide, or it is on a desktop device, at
+ * which point it becomes 33.333% width.
+ *
+ * csswizardry grids also has push and pull classes which allow you to nudge
+ * grid items left and right by a defined amount. These follow the same naming
+ * convention as above, but are prepended by either `push--` or `pull--`, for
+ * example:
+ *
+   `class="grid__item  one-half  push--one-half"`
+ *
+ * This would give you a grid item which is 50% width and pushed over to the
+ * right by 50%.
+ *
+ * All classes in csswizardry grids follow this patten, so you should fairly
+ * quickly be able to piece together any combinations you can imagine, for
+ * example:
+ *
+   `class="grid__item  one-whole  lap--one-half  desk--one-third  push--desk--one-third"`
+ *
+   `class="grid__item  one-quarter  palm--one-half  push--palm--one-half"`
+ *
+   `class="grid__item  palm--one-third  desk--five-twelfths"`
+ */
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+/**
+ * If you are building a non-responsive site but would still like to use
+ * csswizardry-grids, set this to ‘false’:
+ */
+/**
+ * Is this build mobile first? Setting to ‘true’ means that all grids will be
+ * 100% width if you do not apply a more specific class to them.
+ */
+/**
+ * Set the spacing between your grid items.
+ */
+/**
+ * Would you like Sass’ silent classes, or regular CSS classes?
+ */
+/**
+ * Would you like push and pull classes enabled?
+ */
+/**
+ * Using `inline-block` means that the grid items need their whitespace removing
+ * in order for them to work correctly. Set the following to true if you are
+ * going to achieve this by manually removing/commenting out any whitespace in
+ * your HTML yourself.
+ *
+ * Setting this to false invokes a hack which cannot always be guaranteed,
+ * please see the following for more detail:
+ *
+ * github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
+ * github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
+ */
+/**
+ * Define your breakpoints. The first value is the prefix that shall be used for
+ * your classes (e.g. `.palm--one-half`), the second value is the media query
+ * that the breakpoint fires at.
+ */
+/**
+ * Define which namespaced breakpoints you would like to generate for each of
+ * widths, push and pull. This is handy if you only need pull on, say, desk, or
+ * you only need a new width breakpoint at mobile sizes. It allows you to only
+ * compile as much CSS as you need. All are turned on by default, but you can
+ * add and remove breakpoints at will.
+ *
+ * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
+ * have been set to ‘true’.
+ */
+/**
+ * You do not need to edit anything from this line onward; csswizardry-grids is
+ * good to go. Happy griddin’!
+ */
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/**
+ * These mixins are for the library to use only, you should not need to modify
+ * them at all.
+ *
+ * Enclose a block of code with a media query as named in `$breakpoints`.
+ */
+/**
+ * Drop relative positioning into silent classes which can’t take advantage of
+ * the `[class*="push--"]` and `[class*="pull--"]` selectors.
+ */
+/*------------------------------------*\
+    $GRID SETUP
+\*------------------------------------*/
+/**
+ * 1. Allow the grid system to be used on lists.
+ * 2. Remove any margins and paddings that might affect the grid system.
+ * 3. Apply a negative `margin-left` to negate the columns’ gutters.
+ */
+.main-header, .map-container, .main-content, .main-footer {
+  list-style: none;
+  /* [1] */
+  margin: 0;
+  /* [2] */
+  padding: 0;
+  /* [2] */
+  margin-left: -1.6rem;
+  /* [3] */ }
+
+/**
+ * 1. Cause columns to stack side-by-side.
+ * 2. Space columns apart.
+ * 3. Align columns to the tops of each other.
+ * 4. Full-width unless told to behave otherwise.
+ * 5. Required to combine fluid widths and fixed gutters.
+ */
+.main-content .post {
+  display: inline-block;
+  /* [1] */
+  padding-left: 1.6rem;
+  /* [2] */
+  vertical-align: top;
+  /* [3] */
+  width: 100%;
+  /* [4] */
+  -webkit-box-sizing: border-box;
+  /* [5] */
+  -moz-box-sizing: border-box;
+  /* [5] */
+  box-sizing: border-box;
+  /* [5] */ }
+
+/**
+ * Reversed grids allow you to structure your source in the opposite order to
+ * how your rendered layout will appear. Extends `.grid`.
+ */
+/**
+ * Gutterless grids have all the properties of regular grids, minus any spacing.
+ * Extends `.grid`.
+ */
+.main-header, .map-container, .main-content, .main-footer {
+  margin-left: 0; }
+  .main-content .main-header > .post, .main-content .map-container > .post, .main-content > .post, .main-content .main-footer > .post {
+    padding-left: 0; }
+
+/**
+ * Align the entire grid to the right. Extends `.grid`.
+ */
+/**
+ * Centered grids align grid items centrally without needing to use push or pull
+ * classes. Extends `.grid`.
+ */
+.main-content {
+  text-align: center; }
+  .main-content > .post {
+    text-align: left; }
+
+/**
+ * Align grid cells vertically (`.grid--middle` or `.grid--bottom`). Extends
+ * `.grid`.
+ */
+/**
+ * Create grids with narrower gutters. Extends `.grid`.
+ */
+/**
+ * Create grids with wider gutters. Extends `.grid`.
+ */
+/*------------------------------------*\
+    $WIDTHS
+\*------------------------------------*/
+/**
+ * Create our width classes, prefixed by the specified namespace.
+ */
+/**
+ * Our regular, non-responsive width classes.
+ */
+/**
+ * Whole
+ */
+/**
+ * Halves
+ */
+/**
+ * Thirds
+ */
+/**
+ * Quarters
+ */
+/**
+ * Fifths
+ */
+/**
+ * Sixths
+ */
+/**
+ * Eighths
+ */
+/**
+ * Tenths
+ */
+/**
+ * Twelfths
+ */
+/**
+ * Our responsive classes, if we have enabled them.
+ */
+@media only screen and (max-width: 480px) {
+  /**
+   * Whole
+   */
+  /**
+   * Halves
+   */
+  /**
+   * Thirds
+   */
+  /**
+   * Quarters
+   */
+  /**
+   * Fifths
+   */
+  /**
+   * Sixths
+   */
+  /**
+   * Eighths
+   */
+  /**
+   * Tenths
+   */
+  /**
+   * Twelfths
+   */ }
+@media only screen and (min-width: 481px) and (max-width: 1023px) {
+  /**
+   * Whole
+   */
+  /**
+   * Halves
+   */
+  .main-content .post {
+    width: 50%; }
+
+  /**
+   * Thirds
+   */
+  /**
+   * Quarters
+   */
+  /**
+   * Fifths
+   */
+  /**
+   * Sixths
+   */
+  /**
+   * Eighths
+   */
+  /**
+   * Tenths
+   */
+  /**
+   * Twelfths
+   */ }
+@media only screen and (max-width: 1023px) {
+  /**
+   * Whole
+   */
+  /**
+   * Halves
+   */
+  /**
+   * Thirds
+   */
+  /**
+   * Quarters
+   */
+  /**
+   * Fifths
+   */
+  /**
+   * Sixths
+   */
+  /**
+   * Eighths
+   */
+  /**
+   * Tenths
+   */
+  /**
+   * Twelfths
+   */ }
+@media only screen and (min-width: 1024px) {
+  /**
+   * Whole
+   */
+  /**
+   * Halves
+   */
+  /**
+   * Thirds
+   */
+  /**
+   * Quarters
+   */
+  .main-content .post {
+    width: 25%; }
+
+  /**
+   * Fifths
+   */
+  /**
+   * Sixths
+   */
+  /**
+   * Eighths
+   */
+  /**
+   * Tenths
+   */
+  /**
+   * Twelfths
+   */ }
+/*------------------------------------*\
+    $PUSH
+\*------------------------------------*/
+/**
+ * Push classes, to move grid items over to the right by certain amounts.
+ */
+/*------------------------------------*\
+    $PULL
+\*------------------------------------*/
+/**
+ * Pull classes, to move grid items back to the left by certain amounts.
+ */
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background: transparent; }
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre-wrap; }
+
+/**
+ * Set consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+h1 {
+  font-size: 3.5rem; }
+
+h2 {
+  font-size: 2rem; }
+
+h3 {
+  font-size: 1.8rem; }
+
+h4 {
+  font-size: 1.6rem; }
+
+::-webkit-input-placeholder {
+  color: #e8ce8b; }
+
+:-moz-placeholder {
+  color: #e8ce8b; }
+
+::-moz-placeholder {
+  color: #e8ce8b; }
+
+:-ms-input-placeholder {
+  color: #e8ce8b; }
+
+.highlight, dl, blockquote {
+  background: #eaf4f1;
+  margin: 0 2rem 2rem 2rem;
+  padding: 2rem 2rem; }
+
+.highlight > *:last-child, dl > *:last-child, blockquote > *:last-child,
+.highlight > *:last-child > *:last-child,
+dl > *:last-child > *:last-child,
+blockquote > *:last-child > *:last-child,
+.highlight > *:last-child > *:last-child > *:last-child,
+dl > *:last-child > *:last-child > *:last-child,
+blockquote > *:last-child > *:last-child > *:last-child {
+  margin-bottom: 0; }
+
+.block-tag:before, pre code:before {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$steps);
+  background: #5eaa94;
+  display: inline-block;
+  padding: 0.5rem;
+  position: absolute;
+  height: 1rem;
+  font-size: 1.25rem;
+  line-height: 0.8;
+  top: 0.9rem;
+  left: -2.9rem; }
+
+.group, form, .main-header {
+  *zoom: 1; }
+  .group:after, form:after, .main-header:after {
+    clear: both;
+    content: " ";
+    display: table; }
+  .group:before, form:before, .main-header:before {
+    content: " ";
+    display: table; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "ff-meta-serif-web-pro", serif;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: text-top;
+  -webkit-font-smoothing: antialiased;
+  color: #31282c;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 0.5em 0; }
+
+article {
+  margin-bottom: 2rem; }
+
+p {
+  margin: 0 0 1rem 0; }
+
+ul, ol {
+  margin-top: 0;
+  padding: 0 0 0 4rem; }
+
+.list-inline {
+  list-style-type: none;
+  padding-left: 0; }
+  .list-inline li {
+    display: inline-block;
+    margin-right: 1rem; }
+    .list-inline li:last-child {
+      margin-right: 0; }
+
+dl {
+  border-left: 1rem solid #e16a48; }
+  dl dt {
+    color: #5eaa94;
+    font-weight: bold; }
+  dl dd {
+    color: #31282c;
+    margin: 0 0 1rem 2rem; }
+
+blockquote {
+  font-style: italic;
+  border-left: 1rem solid #e16a48; }
+
+pre code {
+  position: relative;
+  margin: 0 2rem 2rem 2rem;
+  display: block; }
+  pre code:before {
+    content: "code"; }
+
+code {
+  font-family: "Inconsolata", sans-serif;
+  line-height: 1;
+  color: #f9f2e0;
+  background: #31282c;
+  padding: 0.25rem 0.5rem; }
+
+a {
+  outline: 0;
+  -webkit-transition: color 500ms ease-in-out 0;
+  -moz-transition: color 500ms ease-in-out 0;
+  -o-transition: color 500ms ease-in-out 0;
+  transition: color 500ms ease-in-out 0;
+  color: #5eaa94;
+  text-decoration: none;
+  border-bottom: 1px dashed #a1cdc0; }
+  a:hover {
+    outline: 0;
+    -webkit-transition: color 500ms ease-in-out 0;
+    -moz-transition: color 500ms ease-in-out 0;
+    -o-transition: color 500ms ease-in-out 0;
+    transition: color 500ms ease-in-out 0;
+    border-bottom: 1px solid #a1cdc0; }
+
+.label {
+  padding: 0.25rem 0.5rem;
+  background: #31282c;
+  color: #f9f2e0; }
+
+.button {
+  -webkit-transition: background 500ms ease-in-out 0;
+  -moz-transition: background 500ms ease-in-out 0;
+  -o-transition: background 500ms ease-in-out 0;
+  transition: background 500ms ease-in-out 0;
+  font-family: "ff-meta-serif-web-pro", serif;
+  text-transform: none;
+  font-weight: 200;
+  background: #5eaa94;
+  padding: 0.5rem 1rem;
+  color: #f9f2e0;
+  border: none;
+  border-radius: 3px; }
+  .button:hover {
+    -webkit-transition: background 500ms ease-in-out 0;
+    -moz-transition: background 500ms ease-in-out 0;
+    -o-transition: background 500ms ease-in-out 0;
+    transition: background 500ms ease-in-out 0;
+    background: #31282c;
+    border-bottom: none; }
+
+.radius {
+  border-radius: 3px; }
+
+.error {
+  background: #cf4858; }
+
+.success {
+  background: #16a79d; }
+
+.secondary {
+  background: #5eaa94; }
+
+table {
+  width: 100%;
+  margin-bottom: 2rem; }
+  table th {
+    background: #31282c;
+    color: white;
+    padding: 0.5rem 1rem; }
+    table th:first-child {
+      text-align: left; }
+  table tr td {
+    text-align: center;
+    padding: 0.5rem 1rem; }
+    table tr td:first-child {
+      text-align: left; }
+  table tr:nth-child(odd) {
+    background: #e2dcdf; }
+  table tr:nth-child(even) {
+    background: #cbc0c5; }
+
+form {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%; }
+  form label.label-text {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #31282c;
+    display: block;
+    line-height: 2; }
+  form input, form textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #b4a4ab;
+    padding: 1rem; }
+    form input:focus, form textarea:focus {
+      border: 1px solid #5eaa94;
+      outline: none; }
+  form input, form textarea, form select {
+    margin: 0 0 2rem 0; }
+  form input[type=text], form textarea {
+    width: 100%;
+    display: block; }
+  form input[type=text].input-50 {
+    margin-right: 2%;
+    width: 49%;
+    float: left; }
+  form input[type=text].input-33 {
+    margin-right: 2%;
+    width: 32%;
+    float: left; }
+  form input[type=text]:last-child {
+    margin-right: 0; }
+  form input[type=radio], form input[type=checkbox] {
+    margin-right: 1.5rem; }
+    form input[type=radio]:last-child, form input[type=checkbox]:last-child {
+      margin-right: 0; }
+  form input[type=submit] {
+    -webkit-transition: background 500ms ease-in-out 0;
+    -moz-transition: background 500ms ease-in-out 0;
+    -o-transition: background 500ms ease-in-out 0;
+    transition: background 500ms ease-in-out 0;
+    font-family: "ff-meta-serif-web-pro", serif;
+    text-transform: none;
+    font-weight: 200;
+    background: #5eaa94;
+    padding: 0.5rem 1rem;
+    color: #f9f2e0;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 0;
+    float: right; }
+    form input[type=submit]:hover {
+      -webkit-transition: background 500ms ease-in-out 0;
+      -moz-transition: background 500ms ease-in-out 0;
+      -o-transition: background 500ms ease-in-out 0;
+      transition: background 500ms ease-in-out 0;
+      background: #31282c;
+      border-bottom: none; }
+  form input::-moz-focus-inner {
+    border: 0; }
+
+.main-header {
+  padding: 2rem;
+  text-align: center; }
+  .main-header h1 {
+    font-size: 4rem;
+    margin-bottom: 0; }
+    .main-header h1 a {
+      border: none; }
+  .main-header span {
+    display: inline-block; }
+
+.map-container {
+  background: #5eaa94;
+  padding: 2rem;
+  margin-bottom: 2rem; }
+  .map-container .google-map {
+    padding-bottom: 2rem; }
+    .map-container .google-map #map-canvas {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      height: 35rem;
+      border: 3px solid #e16a48; }
+  .map-container .google-map-info {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #f9f2e0;
+    border: 3px solid #e16a48;
+    text-align: center;
+    width: 100%;
+    padding: 1rem 1rem 1.5rem 1rem; }
+
+.latest-posts .post {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #5eaa94;
+  padding: 2rem; }
+  .latest-posts .post .post-info {
+    position: absolute;
+    bottom: 5rem;
+    text-align: left;
+    background: #e9c057;
+    padding: 0.5rem 1rem;
+    line-height: 1; }
+    .latest-posts .post .post-info h2 {
+      margin-bottom: -0.5rem;
+      padding-bottom: 0; }
+      .latest-posts .post .post-info h2 a {
+        color: #31282c; }
+    .latest-posts .post .post-info time {
+      display: inline-block;
+      font-size: 1.2rem; }
+  .latest-posts .post .post-author {
+    position: absolute;
+    top: 1rem;
+    right: 1rem; }
+    .latest-posts .post .post-author img {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border-radius: 100%;
+      width: 6rem;
+      height: auto;
+      border: 3px solid #e9c057; }
+  .latest-posts .post p {
+    margin-bottom: 0; }
+    .latest-posts .post p a {
+      border: none; }
+      .latest-posts .post p a img {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+        display: block; }
+
+.main-footer {
+  background: #31282c;
+  color: #f9f2e0;
+  text-align: center;
+  padding: 2rem; }
+
+html {
+  font-family: "ff-meta-web-pro", sans-serif;
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #31282c;
+  background: #f9f2e0; }
+
+header {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 1.5rem 2rem 0.1rem 2rem;
+  background: #31282c;
+  color: #f9f2e0; }
+
+section {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 2rem; }

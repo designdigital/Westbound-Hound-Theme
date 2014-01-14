@@ -1,0 +1,182 @@
+// COLORS
+$color-main: #31282C;
+$color-highlight: #5EAA94;
+$color-accent: #E16A48;
+$color-alt: #E9C057;
+$color-lightest: #F9F2E0;
+
+$color-error: #cf4858;
+$color-success: #16a79d;
+
+$color-placeholder: darken($color-lightest, 20%);
+
+// FONTS
+
+$font-serif: "ff-meta-serif-web-pro", serif;
+$font-sans: "ff-meta-web-pro", sans-serif;
+$font-code: 'Inconsolata', sans-serif;
+$font-icon: 'graniamurray';
+$base-font-size: 1.6rem;
+$base-line-height: 1.6;
+
+$font-header: $font-serif;
+$font-body: $font-sans;
+
+// BREAKPOINTS
+$desktop: 1024px;
+$tablet: 768px;
+$phone: 480px;
+
+// HEADINGS
+
+h1 {font-size: 3.5rem;}
+h2 {font-size: 2rem;}
+h3 {font-size: 1.8rem;}
+h4 {font-size: 1.6rem;}
+
+// RADIUS
+$border-radius: 3px;
+
+// FULL BACKGROUND
+@mixin full-bg($image-url){
+  background: url($image-url) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+// BOX SIZING
+@mixin box-sizing($sizing-type: border-box){
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+// BOX SHADOW
+@mixin box-shadow($horizontal: 1px, $vertical: 1px, $blur: 2px, $spread: 0, $color: rgba(0,0,0,0.25)){
+  -moz-box-shadow:    $horizontal $vertical $blur $spread $color;
+  -webkit-box-shadow: $horizontal $vertical $blur $spread $color;
+  box-shadow:         $horizontal $vertical $blur $spread $color;
+}
+// TRANSITIONS
+@mixin transition($property: all, $time: 500ms, $type: ease-in-out, $delay: 0){
+  -webkit-transition: $property $time $type $delay;
+  -moz-transition: $property $time $type $delay;
+  -o-transition: $property $time $type $delay;
+  transition: $property $time $type $delay;
+}
+// BUTTONS
+@mixin button($background: $color-highlight, $color: $color-lightest, $hover: $color-main){
+  @include transition(background);
+  font-family: $font-header;
+  text-transform: none;
+  font-weight: 200;
+  background: $background;
+  padding: 0.5rem 1rem;
+  color: $color;
+  border: none;
+  border-radius: $border-radius;
+  &:hover {
+    @include transition(background);
+    background: $hover;
+    border-bottom: none;
+  }
+}
+// TEXT ROTATE
+@mixin text-rotate($degrees: -90deg, $steps: 3){
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$steps);
+}
+// FORM PLACEHOLDER
+::-webkit-input-placeholder {color: $color-placeholder;}
+:-moz-placeholder {color: $color-placeholder;}
+::-moz-placeholder {color: $color-placeholder;}
+:-ms-input-placeholder {color: $color-placeholder;}
+
+// FONT SETUP
+@mixin font-setup($font-family: $font-body){
+  font-family: $font-family;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: text-top;
+  -webkit-font-smoothing: antialiased;
+}
+
+// TABLES
+@mixin table($header-bg, $header-color, $stripe, $stripe-alt: $stripe){
+  width: 100%;
+  margin-bottom: 2rem;
+  th {
+    background: $header-bg;
+    color: $header-color;
+    padding: 0.5rem 1rem;
+    &:first-child {
+      text-align: left;
+    }
+  }
+  tr {
+    td {
+      text-align: center;
+      padding: 0.5rem 1rem;
+      &:first-child {
+        text-align: left;
+      }
+    }
+  }
+  tr:nth-child(odd) {
+    background: lighten($stripe, 70%);
+  }
+  tr:nth-child(even) {
+    background: lighten($stripe, 60%);
+  }
+}
+
+// HIGHLIGHTS
+.highlight {
+  background: lighten($color-highlight, 42%);
+  margin: 0 2rem 2rem 2rem;
+  padding: 2rem 2rem;
+}
+.highlight > *:last-child,
+.highlight > *:last-child > *:last-child,
+.highlight > *:last-child > *:last-child > *:last-child {
+  margin-bottom: 0;
+}
+
+
+// BLOCK TAG
+.block-tag {
+  &:before {
+    @include text-rotate;
+    background: $color-highlight;
+    display: inline-block;
+    padding: 0.5rem;
+    position: absolute;
+    height: 1rem;
+    font-size: 1.25rem;
+    line-height: 0.8;
+    top: 0.9rem;
+    left: -2.9rem;
+  }
+}
+
+// CLEAR
+.group {
+  *zoom: 1;
+  &:after {
+    clear: both;
+    content: " ";
+    display: table;
+  }
+  &:before {
+    content: " ";
+    display: table;
+  }
+}

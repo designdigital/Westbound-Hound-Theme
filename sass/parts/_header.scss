@@ -1,0 +1,40 @@
+.main-header {
+  @extend .group;
+  padding: 2rem;
+  text-align: center;
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
+    a {
+      border: none;
+    }
+  }
+  span {
+    display: inline-block;
+  }
+}
+
+.map-container {
+  background: $color-highlight;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  .google-map {
+    padding-bottom: 2rem;
+    #map-canvas {
+      @include box-sizing;
+      height: 35rem;
+      border: 3px solid $color-accent;
+    }
+  }
+  .google-map-info {
+    @include box-sizing;
+    background: $color-lightest;
+    border: 3px solid $color-accent;
+    text-align: center;
+    width: 100%;
+    padding: 1rem 1rem 1.5rem 1rem;
+  }
+}
+
+
+

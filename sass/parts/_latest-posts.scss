@@ -1,0 +1,51 @@
+.latest-posts {
+  .post {
+    position: relative;
+    @include box-sizing;
+    background: $color-highlight;
+    padding: 2rem;
+    .post-info {
+      position: absolute;
+      bottom: 5rem;
+      text-align: left;
+      background: $color-alt;
+      padding: 0.5rem 1rem;
+      line-height: 1;
+      h2 {
+        margin-bottom: -0.5rem;
+        padding-bottom: 0;
+        a {
+          color: $color-main;
+        }
+      }
+      time {
+        display: inline-block;
+        font-size: 1.2rem;
+      }
+    }
+    .post-author {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      img {
+        @include box-sizing;
+        border-radius: 100%;
+        width: 6rem;
+        height: auto;
+        border: 3px solid $color-alt;
+      }
+    }
+    p {
+      margin-bottom: 0;
+      a {
+        border: none;
+        img {
+          @include box-sizing;
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+    }
+  }
+}

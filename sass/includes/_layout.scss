@@ -1,0 +1,22 @@
+.main-header {
+  @extend %grid;
+  @extend %grid--full;
+}
+.map-container {
+  @extend %grid;
+  @extend %grid--full;
+}
+.main-content {
+  @extend %grid;
+  @extend %grid--full;
+  @extend %grid--center;
+  .post {
+    @extend %grid__item;
+    @extend %lap--one-half;
+    @extend %desk--one-quarter;
+  }
+}
+.main-footer {
+  @extend %grid;
+  @extend %grid--full;
+}
