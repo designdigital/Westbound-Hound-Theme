@@ -177,9 +177,9 @@ Tags:       roadtrip
  * Gutterless grids have all the properties of regular grids, minus any spacing.
  * Extends `.grid`.
  */
-.main-header, .map-container, .main-footer {
+.main-header, .map-container, .main-footer, .listening-to {
   margin-left: 0; }
-  .main-content .main-header > .post, .main-content .map-container > .post, .main-content .main-footer > .post, .listening-to .main-header > li, .listening-to .map-container > li, .listening-to .main-footer > li {
+  .main-content .main-header > .post, .main-content .map-container > .post, .main-content .main-footer > .post, .main-content .listening-to > .post, .listening-to .main-header > li, .listening-to .map-container > li, .listening-to .main-footer > li, .listening-to > li {
     padding-left: 0; }
 
 /**
@@ -189,9 +189,9 @@ Tags:       roadtrip
  * Centered grids align grid items centrally without needing to use push or pull
  * classes. Extends `.grid`.
  */
-.main-content {
+.main-content, .listening-to {
   text-align: center; }
-  .main-content > .post, .listening-to .main-content > li {
+  .main-content > .post, .main-content .listening-to > .post, .listening-to .main-content > li, .listening-to > li {
     text-align: left; }
 
 /**
@@ -1063,7 +1063,7 @@ form {
 
 .listening-to ul {
   list-style-type: none;
-  padding: 0; }
+  padding: 0 1.6rem 0 0; }
   .listening-to ul li {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

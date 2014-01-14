@@ -21,6 +21,8 @@
 }
 .listening-to {
   @extend %grid;
+  @extend %grid--full;
+  @extend %grid--center;
   li {
     @extend %grid__item;
     @extend %lap--one-half;
