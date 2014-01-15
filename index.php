@@ -17,6 +17,7 @@
   <div class="main-content">
     <h2>How We're Doing</h2>
     <section class="latest-posts all-posts">
+      <?php query_posts(array('posts_per_page' => -1 ) ); ?>
       <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
       <article class="post post-all">
         <div class="post-info">
