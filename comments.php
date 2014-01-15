@@ -32,9 +32,9 @@
 
 	<h2><?php comments_number(); ?></h2>
 
-	<ol>
+	<ul class="comment-list">
 		<?php wp_list_comments( array( 'callback' => 'starkers_comment' ) ); ?>
-	</ol>
+	</ul>
 
 	<?php
 		/* If there are no comments and comments are closed, let's leave a little note, shall we?
@@ -42,9 +42,9 @@
 		 */
 		elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-	
+
 	<p>Comments are closed</p>
-	
+
 	<?php endif; ?>
 
 	<?php comment_form(); ?>

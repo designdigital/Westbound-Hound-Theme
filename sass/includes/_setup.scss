@@ -166,7 +166,7 @@ form {
     }
   }
   input[type=submit] {
-    @include button;
+    @include button($color-alt, $color-main, $color-accent);
     margin-bottom: 0;
     float: right;
   }

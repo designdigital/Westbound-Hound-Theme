@@ -8,11 +8,22 @@
 }
 .main-content {
   @extend %grid;
+  @extend %grid--full;
   @extend %grid--center;
-  .post {
-    @extend %grid__item;
-    @extend %lap--one-half;
-    @extend %desk--one-quarter;
+  .latest-posts {
+    @extend %grid;
+    @extend %grid--full;
+    @extend %grid--center;
+    .post-all {
+      @extend %grid__item;
+      @extend %lap--one-half;
+      @extend %desk--one-quarter;
+    }
+    .post-single {
+      @extend %grid__item;
+      @extend %lap--one-half;
+      @extend %desk--one-half;
+    }
   }
 }
 .main-footer {

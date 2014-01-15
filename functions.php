@@ -111,3 +111,24 @@
 			</article>
 		<?php endif;
 	}
+
+	/**
+ * Remove the text - 'You may use these <abbr title="HyperText Markup
+ * Language">HTML</abbr> tags ...'
+ * from below the comment entry box.
+ */
+
+add_filter('comment_form_defaults', 'remove_comment_styling_prompt');
+
+function remove_comment_styling_prompt($defaults) {
+	$defaults['comment_notes_after'] = '';
+	return $defaults;
+}
+
+add_filter('comment_form_default_fields', 'url_filtered');
+function url_filtered($fields)
+{
+  if(isset($fields['url']))
+   unset($fields['url']);
+  return $fields;
+}

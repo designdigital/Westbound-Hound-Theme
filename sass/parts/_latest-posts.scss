@@ -1,52 +1,101 @@
-.latest-posts {
-  .post {
-    position: relative;
-    text-align: left;
-    @include box-sizing;
-    background: $color-highlight;
-    padding: 2rem;
-    border: 3px solid $color-accent;
-    .post-info {
-      bottom: 5rem;
+.main-content {
+  margin: 2rem;
+  .latest-posts {
+    .post-all.post {
+      margin-bottom: 0;
+      border: 5px solid $color-lightest;
+    }
+    .post {
+      @include box-sizing;
+      position: relative;
       text-align: left;
-      background: $color-alt;
-      margin: 0 0 2rem -1rem;
-      padding: 0.5rem 1rem;
-      line-height: 1;
-      h2 {
-        margin-bottom: -0.5rem;
-        padding-bottom: 0;
-        a {
-          color: $color-main;
+      background: $color-highlight;
+      padding: 2rem;
+      margin-bottom: 1rem;
+      border: 3px solid $color-accent;
+      .post-info {
+        bottom: 5rem;
+        text-align: left;
+        background: $color-alt;
+        margin: 0 0 2rem 0;
+        padding: 0.5rem 1rem;
+        line-height: 1;
+        h2 {
+          margin-right: 4.5rem;
+          margin-bottom: -0.5rem;
+          padding-bottom: 0;
+          a {
+            color: $color-main;
+            border: none;
+          }
+        }
+        time {
+          display: inline-block;
+          font-size: 1.2rem;
         }
       }
-      time {
-        display: inline-block;
-        font-size: 1.2rem;
-      }
-    }
-    .post-author {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      img {
-        @include box-sizing;
-        border-radius: 100%;
-        width: 6.5rem;
-        height: auto;
-        border: 3px solid $color-alt;
-      }
-    }
-    p {
-      margin-bottom: 0;
-      a {
-        color: $color-main;
+      .post-author {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
         img {
           @include box-sizing;
-          width: 100%;
+          border-radius: 100%;
+          width: 6.5rem;
           height: auto;
-          display: block;
-          margin: 1rem 0;
+          border: 3px solid $color-alt;
+        }
+      }
+      p {
+        margin-bottom: 0;
+        a {
+          color: $color-main;
+          img {
+            @include box-sizing;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+          }
+        }
+      }
+      .comments-link {
+        @include button($color-alt, $color-main, $color-accent);
+        display: inline-block;
+        font-weight: 700;
+        margin-top: 1rem;
+      }
+    }
+    .comment-section {
+      margin-top: 2rem;
+      .comment-list {
+        padding: 0;
+        list-style: none;
+        li {
+          background: lighten($color-highlight, 10%);
+          padding: 1rem;
+          margin-bottom: 2rem;
+          .avatar {
+            @include box-sizing;
+            border-radius: 100%;
+            border: 3px solid $color-alt;
+            margin-right: 2rem;
+            float: left;
+          }
+          a {
+            color: $color-main;
+            border: none;
+          }
+          h4 {
+            margin-bottom: -0.5rem;
+          }
+          time {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid $color-alt;
+            display: block;
+          }
         }
       }
     }

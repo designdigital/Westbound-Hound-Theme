@@ -1,6 +1,7 @@
-var $container = $('.latest-posts');
-// initialize
-$container.packery({
-  itemSelector: '.post',
-  gutter: 10
+$(document).ready(function(){
+  var $container = $('.all-posts');
+  // initialize
+  $container.packery({
+    itemSelector: '.post-all'
+  });
 });
