@@ -70,6 +70,9 @@
 		wp_register_script( 'packery', get_template_directory_uri().'/js/packery.js', array( 'jquery' ) );
 		wp_enqueue_script( 'packery' );
 
+		wp_register_script( 'images', get_template_directory_uri().'/js/imagesLoaded.js', array( 'jquery' ) );
+		wp_enqueue_script( 'images' );
+
 		wp_register_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB66jSDX2gxsse5jP-w3OEE8GvRiQJ6UoQ&sensor=false', array( 'jquery' ) );
 		wp_enqueue_script( 'google-maps' );
 

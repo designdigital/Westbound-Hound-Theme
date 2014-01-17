@@ -1,7 +1,11 @@
 $(document).ready(function(){
   var $container = $('.all-posts');
-  // initialize
-  $container.packery({
-    itemSelector: '.post-all'
+
+  // initialize Packery after all images have loaded
+  $container.imagesLoaded( function() {
+    $container.packery({
+      // options...
+      itemSelector: '.post-all'
+    });
   });
 });
