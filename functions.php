@@ -81,6 +81,8 @@
 
 		wp_register_script( 'lastfm', get_template_directory_uri().'/js/lastfm.js', array( 'jquery' ) );
 		wp_enqueue_script( 'lastfm' );
+		
+		wp_enqueue_script( 'thesnug_typekit', '//use.typekit.net/ijm0hfz.js');
 
 		wp_register_script( 'main', get_template_directory_uri().'/js/main.js', array( 'jquery' ) );
 		wp_enqueue_script( 'main' );
@@ -88,6 +90,18 @@
 		wp_register_style( 'screen', get_stylesheet_directory_uri().'/style.css', '', '', 'screen' );
         wp_enqueue_style( 'screen' );
 	}
+	
+	
+	/**
+ * Enqueue scripts and styles.
+ */
+add_action( 'wp_head', 'thesnug_typekit_inline' );
+function thesnug_typekit_inline() {
+	if ( wp_script_is( 'thesnug_typekit', 'done' ) ) { ?>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<?php }
+}
+	
 
 	/* ========================================================================================================================
 
