@@ -8,14 +8,13 @@ function initialize() {
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
   var kmlLayer = new google.maps.KmlLayer({
-    url: 'https://feeds.foursquare.com/history/3U1KLCUOEHE1MBBQ0Y2IRMWEZYAXDZ1A.kml?count=500',
+    url: 'http://share.thesn.ug/1B0o2a1F0k29/download/checkins.kml',
     suppressInfoWindows: true,
     map: map
   });
 
   google.maps.event.addListener(kmlLayer, 'click', function(kmlEvent) {
     var text = kmlEvent.featureData.infoWindowHtml;
-    console.log(kmlEvent);
     showInContentWindow(text);
   });
 
@@ -23,7 +22,6 @@ function initialize() {
     var sidediv = document.getElementById('content-window');
     sidediv.innerHTML = text;
   }
-
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);

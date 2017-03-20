@@ -73,7 +73,7 @@
 		wp_register_script( 'images', get_template_directory_uri().'/js/imagesLoaded.js', array( 'jquery' ) );
 		wp_enqueue_script( 'images' );
 
-		wp_register_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB66jSDX2gxsse5jP-w3OEE8GvRiQJ6UoQ&sensor=false', array( 'jquery' ) );
+		wp_register_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAT9_O5fxS43DTmY60URsjNpIMV92ZJgZ4', array( 'jquery' ) );
 		wp_enqueue_script( 'google-maps' );
 
 		wp_register_script( 'map', get_template_directory_uri().'/js/map.js', array( 'jquery' ) );
@@ -81,7 +81,7 @@
 
 		wp_register_script( 'lastfm', get_template_directory_uri().'/js/lastfm.js', array( 'jquery' ) );
 		wp_enqueue_script( 'lastfm' );
-		
+
 		wp_enqueue_script( 'thesnug_typekit', '//use.typekit.net/ijm0hfz.js');
 
 		wp_register_script( 'main', get_template_directory_uri().'/js/main.js', array( 'jquery' ) );
@@ -90,8 +90,8 @@
 		wp_register_style( 'screen', get_stylesheet_directory_uri().'/style.css', '', '', 'screen' );
         wp_enqueue_style( 'screen' );
 	}
-	
-	
+
+
 	/**
  * Enqueue scripts and styles.
  */
@@ -101,7 +101,7 @@ function thesnug_typekit_inline() {
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<?php }
 }
-	
+
 
 	/* ========================================================================================================================
 
